@@ -1,18 +1,22 @@
-'use strict';
+/*jshint unused: vars */
+define(['angular', 'controllers/main']/*deps*/, function (angular, MainCtrl)/*invoke*/ {
+  'use strict';
 
-angular.module('ecomovaJsApp', [
+  return angular.module('ecomovaJsApp', ['ecomovaJsApp.controllers.MainCtrl',
+/*angJSDeps*/
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ngRoute'
 ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    .config(function ($routeProvider) {
+      $routeProvider
+        .when('/', {
+          templateUrl: 'views/main.html',
+          controller: 'MainCtrl'
+        })
+        .otherwise({
+          redirectTo: '/'
+        });
+    });
+});

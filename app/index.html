@@ -12,35 +12,18 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/sass-bootstrap-compass/dist/css/sass-bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/main.css">	
+    <!-- endbuild -->	
   </head>
   <body ng-app="ecomovaAngularApp">
-    <div class="site-wrapper">
+    
 
-      <div class="site-wrapper-inner">
 
-        <div class="cover-container">
-
-          
-          <div class="inner cover">
-	
-	
-	
-            <div id="ng-view" ng-view>
-            </div>
-			
-		  </div>
-
-        </div>
-
-      </div>
-
-    </div>
+    <div id="ng-view" ng-view></div>
 	
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -60,9 +43,12 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/sass-bootstrap-compass/dist/js/sass-bootstrap.js"></script>
+    <script src="bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+    <script src="bower_components/foundation/js/foundation.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -71,9 +57,8 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-		<script src="scripts/controllers/friends.js"></script>		
+        <script data-main="scripts/app" src="bower_components/requirejs/require.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

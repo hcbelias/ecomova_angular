@@ -1,4 +1,4 @@
-// Generated on 2014-03-07 using generator-angular 0.7.1
+// Generated on 2014-03-09 using generator-angular-require 0.1.11
 'use strict';
 
 // # Globbing
@@ -95,6 +95,7 @@ module.exports = function (grunt) {
     jshint: {
       options: {
         jshintrc: '.jshintrc',
+        ignores: '<%= yeoman.app %>/scripts/bootstrap-built.js',
         reporter: require('jshint-stylish')
       },
       all: [
@@ -146,8 +147,6 @@ module.exports = function (grunt) {
         ignorePath: '<%= yeoman.app %>/'
       }
     },
-
-
 
 
     // Compiles Sass to CSS and generates necessary files if requested
@@ -349,6 +348,40 @@ module.exports = function (grunt) {
         configFile: 'karma.conf.js',
         singleRun: true
       }
+    },
+    requirejs: {
+      compile: {
+        options: {
+          baseUrl: '<%= yeoman.app %>/scripts',
+          paths: {
+            angular: '../bower_components/angular/angular',
+            angularRoute: '../bower_components/angular-route/angular-route',
+            angularCookies: '../bower_components/angular-cookies/angular-cookies',
+            angularSanitize: '../bower_components/angular-sanitize/angular-sanitize',
+            angularResource: '../bower_components/angular-resource/angular-resource',
+            angularMocks: '../bower_components/angular-mocks/angular-mocks',
+            text: '../bower_components/requirejs-text/text'
+          },
+          shim: {
+            'angular' : {'exports' : 'angular'},
+            'angularRoute': ['angular'],
+            'angularCookies': ['angular'],
+            'angularSanitize': ['angular'],
+            'angularResource': ['angular'],
+            'angularMocks': {
+              deps:['angular'],
+              'exports':'angular.mock'
+            }
+          },
+          optimize: 'uglify2',
+          uglify2: {
+            mangle: false
+          },
+          include: ['angular'],
+          name: 'bootstrap',
+          out: '<%= yeoman.app %>/scripts/bootstrap-built.js'
+        }
+      }
     }
   });
 
@@ -368,9 +401,9 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', function () {
+  grunt.registerTask('server', function (target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
+    grunt.task.run(['serve:' + target]);
   });
 
   grunt.registerTask('test', [
@@ -392,9 +425,11 @@ module.exports = function (grunt) {
     'copy:dist',
     'cdnify',
     'cssmin',
-    'uglify',
+    // Below task commented out as r.js (via grunt-contrib-requirejs) will take care of this
+    // 'uglify',
     'rev',
     'usemin',
+    'requirejs',
     'htmlmin'
   ]);
 
@@ -403,7 +438,4 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
-  
-
-  
 };

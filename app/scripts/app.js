@@ -3,7 +3,7 @@ define(['angular', 'controllers/main']/*deps*/, function (angular, MainCtrl)/*in
   'use strict';
 
   return angular.module('ecomovaAngularApp',[
-    MainCtrl,
+    'ecomovaAngularApp.controllers.MainCtrl',
     'ngCookies',
     'ngResource',
     'ngSanitize',

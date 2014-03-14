@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "dependencies": {
     "angular": "1.2.11",
-    "json3": "~3.2.6",
-    "requirejs": "~2.1.10",
-    "es5-shim": "~2.1.0",
-    "angular-resource": "1.2.11",
     "angular-cookies": "1.2.11",
-    "angular-sanitize": "1.2.11",
-    "angular-route": "1.2.11",
-	"foundation": "5.2.0"
+	"angular-translate": "2.0.1",
+	"angular-resource": "1.2.11",
+	"angular-route": "1.2.11",
+	"angular-sanitize": "1.2.11",
+	"es5-shim": "~2.1.0",    
+	"foundation": "5.2.0",
+	"json3": "~3.2.6",
+	"requirejs": "~2.1.10"
   },
   "devDependencies": {
     "angular-mocks": "1.2.11",

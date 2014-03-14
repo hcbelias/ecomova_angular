@@ -1,15 +1,15 @@
 /*jshint unused: vars */
-define(['angular', 'controllers/main']/*deps*/, function (angular, MainCtrl)/*invoke*/ {
+define(['angular', 'controllers/main']/*deps*/, function (angular)/*invoke*/ {
   'use strict';
-
-  return angular.module('ecomovaAngularApp',[
-    'ecomovaAngularApp.controllers.MainCtrl',
+  var app = angular.module('ecomovaJsApp',[
+    'ecomovaJsApp.controllers.MainCtrl',
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
-  ])
-    .config(function ($routeProvider) {
+    'ngRoute',
+    'pascalprecht.translate'
+  ]);
+  app.config(function ($routeProvider) {
       $routeProvider
         .when('/', {
           templateUrl: 'views/main.html',
@@ -19,4 +19,10 @@ define(['angular', 'controllers/main']/*deps*/, function (angular, MainCtrl)/*in
           redirectTo: '/'
         });
     });
+
+
+
+
+
+  return app;
 });

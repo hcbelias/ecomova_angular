@@ -1,14 +1,16 @@
 /*jshint unused: vars */
 require.config({
+  //baseUrl: '../',
   paths: {
-    angular: '../../bower_components/angular/angular',
-    angularRoute: '../../bower_components/angular-route/angular-route',
-    angularCookies: '../../bower_components/angular-cookies/angular-cookies',
-    angularSanitize: '../../bower_components/angular-sanitize/angular-sanitize',
-    angularResource: '../../bower_components/angular-resource/angular-resource',
-    angularMocks: '../../bower_components/angular-mocks/angular-mocks',
-    translate: '../../bower_components/angular-translate/angular-translate',
-    text: '../../bower_components/requirejs-text/text'
+    angular: '../bower_components/angular/angular',
+    angularRoute: '../bower_components/angular-route/angular-route',
+    angularCookies: '../bower_components/angular-cookies/angular-cookies',
+    angularSanitize: '../bower_components/angular-sanitize/angular-sanitize',
+    angularResource: '../bower_components/angular-resource/angular-resource',
+    angularMocks: '../bower_components/angular-mocks/angular-mocks',    
+	angularControllers: '/controllers',
+	angularTranslate: '../bower_components/angular-translate/angular-translate',
+    text: '../bower_components/requirejs-text/text'
   },
   shim: {
     'angular' : {'exports' : 'angular'},
@@ -19,7 +21,8 @@ require.config({
     'angularMocks': {
       deps:['angular'],
       'exports':'angular.mock'
-    }
+    },
+	'angularTranslate': ['angular']
   },
   priority: [
     'angular'
@@ -38,6 +41,7 @@ require([
   'angularResource'
 ], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource) {
   'use strict';
+  
   /* jshint ignore:start */
   var $html = angular.element(document.getElementsByTagName('html')[0]);
   /* jshint ignore:end */

@@ -7,8 +7,7 @@ require.config({
     angularCookies: '../bower_components/angular-cookies/angular-cookies',
     angularSanitize: '../bower_components/angular-sanitize/angular-sanitize',
     angularResource: '../bower_components/angular-resource/angular-resource',
-    angularMocks: '../bower_components/angular-mocks/angular-mocks',    
-	angularControllers: '/controllers',
+    angularMocks: '../bower_components/angular-mocks/angular-mocks',
 	angularTranslate: '../bower_components/angular-translate/angular-translate',
     text: '../bower_components/requirejs-text/text'
   },

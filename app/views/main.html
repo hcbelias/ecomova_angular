@@ -1,15 +1,38 @@
-<div id="main-modal" class="reveal-modal" data-reveal style=" visibility: visible; display: block; " ng-controller="MainCtrl">
-	<h1>{{ 'Ecomova' | translate }}</h1>
-    <p class="lead cover-text">{{ 'RegisterYourEmail' | translate }}</p>
-    <form ng-submit="submitEmail()">
-        <div class="row collapse ">
-            <div class="small-2 small-offset-2 columns centered">
-                <a href="#" class="button postfix">{{ 'Send' | translate }}</a>
-            </div>
-            <div class="small-5  columns end centered">
-                <input type="text" placeholder="{{ 'YourEmail' | translate }}">
-            </div>
-        </div>
-    </form>
+<div id="main-modal" class="reveal-modal" data-reveal style=" visibility: visible; display: block; ">
+	<h1>{{ 'ECOMOVA' | translate }}</h1>
+    <p class="lead cover-text">{{ 'REGISTERYOUREMAIL' | translate }}</p>    
+	<form>
+	  <div class="row">
+		<div class="small-10">
+		  <div class="row">
+			<div class="small-3 columns">
+			  <label for="name" class="right inline">{{ 'NAME' | translate }}</label>
+			</div>
+			<div class="small-9 columns">
+			  <input id="name" type="text" placeholder="{{ 'YOURNAME' | translate }}" ng-model="name">
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="small-3 columns">
+			  <label for="email" class="right inline">{{ 'EMAIL' | translate }}</label>
+			</div>
+			<div class="small-9 columns">
+			  <input id="email" type="text" placeholder="{{ 'YOUREMAIL' | translate }}" ng-model="email">
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="small-3 columns">
+			  <label for="birthDate" class="right inline">{{ 'BIRTHDATE' | translate }}</label>
+			</div>
+			<div class="small-9 columns">
+			  <input id="birthDate" type="text" placeholder="{{ 'BIRTHDATE' | translate }}" ng-model="birthDate">
+			</div>
+		  </div>
+			<div class="small-3 small-offset-6 columns centered">
+		       <a href="#" class="button postfix" ng-click="submitEmail">{{ 'SEND' | translate }}</a>
+			</div>
+		</div>
+	  </div>
+	</form>
 </div>
 

@@ -1,5 +1,7 @@
+'ecomovaJsApp.services.Configuration',
+
 /*jshint unused: vars */
-define(['angular', 'controllers/main', 'angularTranslate']/*deps*/, function (angular)/*invoke*/ {
+define(['angular', 'controllers/main', 'angularTranslate', 'services/configuration']/*deps*/, function (angular, ConfigurationConstant)/*invoke*/ {
   'use strict';
   
   //DEP
@@ -27,18 +29,25 @@ define(['angular', 'controllers/main', 'angularTranslate']/*deps*/, function (an
 	//I18n
 	app.config(['$translateProvider', function ($translateProvider) {
 	  $translateProvider.translations('en', {
-		'Ecomova': 'Ecomova',		
-		'RegisterYourEmail': 'Register your e-mail to get the lastest news',
-		'YourEmail': 'Your e-mail',
-		'Send': 'Send'
+		'BIRTHDATE': 'Birth Date',
+		'ECOMOVA': 'Ecomova',
+		'EMAIL': 'E-mail',
+		'NAME': 'Name',
+		'REGISTERYOUREMAIL': 'Register your e-mail to get the lastest news',
+		'YOUREMAIL': 'Your e-mail',
+		'YOURNAME': 'Your name',
+		'SEND': 'Send'
 	  });
 	 
 	  $translateProvider.translations('pt', {
-		'Ecomova': 'Ecomova',		
-		'RegisterYourEmail': 'Cadastre seu e-mail para receber mais informações',
-		'YourEmail': 'Seu e-mail',
-		'Send': 'Enviar'
-		
+		'BIRTHDATE': 'Data de Nascimento',
+		'ECOMOVA': 'Ecomova',
+		'EMAIL': 'E-mail',
+		'NAME': 'Nome',
+		'REGISTERYOUREMAIL': 'Cadastre seu e-mail para receber mais informações',
+		'YOUREMAIL': 'Seu e-mail',
+		'YOURNAME': 'Seu nome',
+		'SEND': 'Enviar'
 	  });
 	 
 	  $translateProvider.preferredLanguage('pt');

@@ -1,19 +1,20 @@
 define(['angular'], function (angular) {
   'use strict';
-  angular.module('ecomovaJsApp.controllers.MainCtrl', ['ecomovaJsApp.services.Configuration'])
-    .controller('MainCtrl', function ($scope) {
+  angular.module('ecomovaJsApp.controllers', [])
+    .controller('MainCtrl', ['$scope', 'User', function ($scope, userService) {
 		debugger;
 		$scope.submitEmail = function () {
-			
 			debugger;
-			$http
-				.post('/User/RegisterUser', JSON.stringify(data))
-				.success(function(){
-					debugger;
-					/*success callback*/}
-					
-				);
+			userService.getUser(1)
+				.success(function (custs) {
+				debugger;
+					$scope.customers = custs;
+				})
+				.error(function (error) {
+				debugger;
+					$scope.status = 'Unable to load customer data: ' + error.message;
+				});
 		};
 
-    });
+    }]);
 });

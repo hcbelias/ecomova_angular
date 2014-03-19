@@ -40,7 +40,6 @@ require([
   'angularResource'
 ], function(angular, app, ngRoutes, ngCookies, ngSanitize, ngResource) {
   'use strict';
-  debugger;
   /* jshint ignore:start */
   var $html = angular.element(document.getElementsByTagName('html')[0]);
   /* jshint ignore:end */

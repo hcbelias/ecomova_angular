@@ -1,10 +1,19 @@
-'use strict';
+define(['angular'], function (angular) {
+  'use strict';
+  angular.module('ecomovaJsApp.controllers', [])
+    .controller('MainCtrl', ['$scope', 'User', function ($scope, userService) {
+		$scope.submitEmail = function () {
+			userService.getUser(1)
+				.success(function (custs) {
+                    $scope.Email = custs.Name;
 
-angular.module('ecomovaAngularApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+                    debugger;
+                    userService.updateUser(custs);
+                    userService.insertUser(custs);
+
+
+				});
+		};
+
+    }]);
+});

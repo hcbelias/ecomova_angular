@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ecomovaSpaApp')
+angular.module('ecomovaJsApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('main', {

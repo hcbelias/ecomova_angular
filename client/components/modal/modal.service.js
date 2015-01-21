@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ecomovaSpaApp')
+angular.module('ecomovaJsApp')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

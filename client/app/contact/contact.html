@@ -13,17 +13,17 @@
             </div>            
         </div>
         <!--end call_to_action_dark -->
-         <div class="row bounce_fade animated bounceIn">    
+         <div class="container-fluid bounce_fade animated bounceIn">    
                 <p  ng-class="result" class="contact_success_box" style="display:none;">{{ resultMessage }}</p>                
                 <form class="form-horizontal contact" id="contact-form" name="contact-form" ng-submit="submit(contact-form)" novalidate>
                   <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
-                    <label for="contact_names" class="col-sm-3 control-label">Nome Completo*</label>
+                    <label for="contact_names" class="col-sm-3 control-label hidden-xs">Nome Completo*</label>
                     <div class="col-sm-9">
                       <input class="contact-input white-input form-control" type="text" required id="contact-name" name="contact-name" placeholder="Nome Completo">
                     </div>
                   </div>
                   <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
-                    <label for="contact-email" class="col-sm-3 control-label">E-mail*</label>
+                    <label for="contact-email" class="col-sm-3 control-label hidden-xs">E-mail*</label>
                     <div class="col-sm-9">
                       <input type="email" required class="form-control" id="contact-email" placeholder="E-mail*">
                     </div>
